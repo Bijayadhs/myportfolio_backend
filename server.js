@@ -7,17 +7,15 @@ import cors from 'cors';
 
 dotenv.config()
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 
 //connect to mongodb server
-mongoose.connect(
-    "mongodb+srv://bijayadhs:bijayadhs@bijayadhs107.d4bvl.mongodb.net/message?retryWrites=true&w=majority"
-    , {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useFindAndModify: true,
-        useUnifiedTopology: true,
-    }).then(() => console.log('MongoDB connected....'))
+mongoose.connect(process.env.MONGO_URI), {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: true,
+    useUnifiedTopology: true,
+}).then(() => console.log('MongoDB connected....'))
     .catch((err) => console.log("Database connection error", err));
 
 
