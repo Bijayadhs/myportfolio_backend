@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Send message detail to backend node-express server",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
